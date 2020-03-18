@@ -52,7 +52,7 @@ def openFile():
             bpm = struct.unpack("B", file.read(1))[0]
             ents[4][1].delete(0,END)
             ents[4][1].insert(0,bpm)
-            ents[4][1].configure(state='disable')
+            # ents[4][1].configure(state='disable')
             file.read(3)
             official = struct.unpack("B", file.read(1))[0]
             file.read(19)
@@ -87,7 +87,9 @@ def saveFile():
         file.write(struct.pack("I", calendar.timegm(time.gmtime())))
         file.read(17)
         file.write(bytes([int(ents[3][1].get())]))
-        file.read(6)
+        file.read(2)
+        file.write(bytes([int(ents[4][1].get())]))
+        file.read(3)
         if(checkButtonVariable.get() == 1):
             file.write(bytes([15]))
         else:
