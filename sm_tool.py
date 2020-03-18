@@ -109,7 +109,6 @@ def saveFile():
 
 root = Tk()
 root.title("BandMaster SM Tool")
-root.iconbitmap('F:/Work/Bandmaster/BandmasterServer/bandmaster-server/bmserver/tools/BM_icon_32.ico')
 root.geometry("600x320")
 
 #root.iconbitmap(os.path.join(os.getcwd(), 'favicon.ico'))
